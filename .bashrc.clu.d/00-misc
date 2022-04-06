@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+function psgrep () {
+	ps aux | grep "$1" | grep -v "grep"
+}
+
+function hsgrep () {
+	history | grep "$1"
+}
+
+function mkcd () {
+	mkdir -p "$1"
+	cd "$1" || return
+}
