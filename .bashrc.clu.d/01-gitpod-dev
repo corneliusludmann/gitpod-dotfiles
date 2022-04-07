@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+function pull-gitpod-installer () {
+    tag=${1:-latest}
+    docker create -ti --name installer "eu.gcr.io/gitpod-core-dev/build/installer:$tag"
+    docker cp installer:/app/installer ./gitpod-installer
+    docker rm -f installer
+}
