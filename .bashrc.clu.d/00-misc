@@ -12,3 +12,8 @@ function mkcd () {
 	mkdir -p "$1"
 	cd "$1" || return
 }
+
+function mkopen () {
+	mkdir -p "$(dirname "$1")"
+	open "$1"
+}
